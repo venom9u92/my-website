@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedStore</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="top">
+        <div class="container">
+            <h1>RedStore</h1>
+            <ul class="menu">
+                <li class="heading"><a href="#">Home</a></li>
+                <li class="heading"><a href="#about">About</a></li>
+                <li class="heading"><a href="#contact">Contact</a></li>
+                <li class="heading"><a href="#more-products">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to RedStore</h1>
+            <h2>Discover the latest trends and shop your favorites.</h2>
+        </div>
+        <img src="pexels-karolina-grabowska-5632402.jpg" alt="Hero Image">
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>RedStore is your ultimate destination for the latest fashion trends. We offer a curated selection of clothing and accessories designed to keep you on top of the fashion game. Our mission is to provide quality products at affordable prices while ensuring an exceptional shopping experience.</p>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/800x400?text=About+Us+Image" alt="About Us">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-list">
+                <div class="product-item" onclick="openProductModal('product1')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+1" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$49.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product2')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+2" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$39.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product3')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+3" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>$59.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product4')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+4" alt="Product 4">
+                    <h3>Product 4</h3>
+                    <p>$29.99</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Products Section -->
+    <section id="more-products" class="more-products">
+        <div class="container">
+            <h2>More Products</h2>
+            <div class="product-list">
+                <div class="product-item" onclick="openProductModal('product5')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+5" alt="Product 5">
+                    <h3>Product 5</h3>
+                    <p>$69.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product6')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+6" alt="Product 6">
+                    <h3>Product 6</h3>
+                    <p>$79.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product7')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+7" alt="Product 7">
+                    <h3>Product 7</h3>
+                    <p>$89.99</p>
+                </div>
+                <div class="product-item" onclick="openProductModal('product8')">
+                    <img src="https://via.placeholder.com/300x300?text=Product+8" alt="Product 8">
+                    <h3>Product 8</h3>
+                    <p>$99.99</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RedStore. All rights reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to open the product modal
+        function openProductModal(productId) {
+            const modal = document.getElementById('product-modal');
+            const modalContent = document.getElementById('modal-product-content');
+
+            // Dynamic content based on the clicked product
+            let productContent = '';
+            if (productId === 'product1') {
+                productContent = `
+                    <h2>Product 1</h2>
+                    <img src="https://via.placeholder.com/500x500?text=Product+1" alt="Product 1">
+                    <p class="price">$49.99</p>
+                    <p class="description">This is a great product that you'll love! Perfect for any occasion.</p>
+                `;
+            }
+            // Add similar conditions for other products, 'product2', 'product3', etc.
+
+            modalContent.innerHTML = productContent;
+            modal.style.display = 'block';
+        }
+
+        // JavaScript to close the product modal
+        function closeProductModal() {
+            const modal = document.getElementById('product-modal');
+            modal.style.display = 'none';
+        }
+
+        // JavaScript to rate the product
+        function rateProduct(stars) {
+            const allStars = document.querySelectorAll('.rate-product .fas');
+            allStars.forEach((star, index) => {
+                if (index < stars) {
+                    star.style.color = 'gold';
+                } else {
+                    star.style.color = 'gray';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
